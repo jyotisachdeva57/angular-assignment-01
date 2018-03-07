@@ -1,0 +1,21 @@
+<h1> Youtube Videos List:</h1>
+
+<div class=" container">
+
+  <ul *ngFor="let youTubeData of data">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <li>{{ youTubeData.id.videoId }}</li>
+        <a routerLink="/home/youtube/{{ youTubeData.id.videoId }} " routerLinkActive="active">
+          <li>{{ youTubeData.snippet.title }}</li>
+        </a>
+        <li>{{ youTubeData.snippet.description}}</li>
+        <img src="{{youTubeData.snippet.thumbnails.default.url}}" alt="Forest"
+             height={{youTubeData.snippet.thumbnails.default.height}}
+             width={{youTubeData.snippet.thumbnails.default.width}}>
+      </div>
+    </div>
+  </ul>
+</div>
+
+<router-outlet></router-outlet>
